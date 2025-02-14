@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #ffe6e6, #ffb3d9, #ff99cc);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    animation: gradientBG 15s ease infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Diseño del gato mejorado */
+.cat {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    margin: 50px auto;
+    animation: bounce 2s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.cat-head {
+    width: 80px;
+    height: 70px;
+    background: #fff;
+    border-radius: 40px 40px 35px 35px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cat-ear {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #fff;
+    position: absolute;
+    top: -10px;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+}
+
+.cat-ear.left { left: 10px; transform: rotate(-15deg); }
+.cat-ear.right { right: 10px; transform: rotate(15deg); }
+
+.cat-eye {
+    width: 12px;
+    height: 12px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 35px;
+    animation: blink 4s infinite;
+}
+
+@keyframes blink {
+    0%, 96%, 98% { transform: scaleY(1); }
+    97% { transform: scaleY(0.1); }
+}
+
+.cat-eye.left { left: 25px; }
+.cat-eye.right { right: 25px; }
+
+.cat-nose {
+    width: 10px;
+    height: 8px;
+    background: #ff9999;
+    border-radius: 50%;
+    position: absolute;
+    top: 45px;
+    left: 35px;
+}
+
+/* Botón inicial mejorado */
+.start-button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(255,105,180,0.3);
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.start-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255,105,180,0.4);
+}
+
+/* Tarjetas mejoradas */
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 300px;
+    margin: 20px auto;
+    display: none;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #ff69b4, #ff1493);
+}
+
+.card h2 {
+    color: #ff1493;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Estilos únicos para cada tarjeta */
+#card1 {
+    background: linear-gradient(135deg, #fff5f5, #fff);
+}
+
+#card2 {
+    background: linear-gradient(135deg, #fff0f5, #fff);
+}
+
+#finalCard {
+    background: linear-gradient(135deg, #ffe6f0, #fff);
+}
+
+/* Carrusel mejorado */
+.swiper {
+    width: 100%;
+    max-width: 300px;
+    height: 400px;
+    display: none;
+    margin: 20px 0;
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.swiper-slide:hover img {
+    transform: scale(1.05);
+}
+
+/* Botón de navegación mejorado */
+.nav-button {
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(255,105,180,0.3);
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255,105,180,0.4);
+}
+
+.swiper-pagination-bullet-active {
+    background: #ff1493;
+}
+
+/* Contador de fotos */
+.photo-counter {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(255,255,255,0.8);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    color: #ff1493;
+    z-index: 1;
+}
