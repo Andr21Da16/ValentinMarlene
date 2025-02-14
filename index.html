@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz San Valentín</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Gato -->
+    <div class="cat">
+        <div class="cat-head">
+            <div class="cat-ear left"></div>
+            <div class="cat-ear right"></div>
+            <div class="cat-eye left"></div>
+            <div class="cat-eye right"></div>
+            <div class="cat-nose"></div>
+        </div>
+    </div>
+
+    <!-- Botón inicial -->
+    <button class="start-button">¡Haz click para comenzar!</button>
+
+    <!-- Audio -->
+    <audio id="bgMusic">
+        <source src="Cinnamon_Girl.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Primera tarjeta -->
+    <div class="card" id="card1">
+        <h2>Feliz día de la amistad y el amor</h2>
+        <p>Marlene</p>
+        <button class="nav-button" onclick="showNext('card2')">Siguiente ❤️</button>
+    </div>
+
+    <!-- Segunda tarjeta -->
+    <div class="card" id="card2">
+        <h2>Las fotos las saqué de tu IG, perdón</h2>
+        <p>Espero que no te moleste... 🙈</p>
+        <button class="nav-button" onclick="showNext('carousel')">Ver fotos 📸</button>
+    </div>
+
+    <!-- Carrusel -->
+    <div class="swiper" id="carousel">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="2.png" alt="Foto 1"></div>
+            <div class="swiper-slide"><img src="1.jpg" alt="Foto 2"></div>
+            <div class="swiper-slide"><img src="3.png" alt="Foto 3"></div>
+            <div class="swiper-slide"><img src="4.png" alt="Foto 4"></div>
+            <div class="swiper-slide"><img src="5.png" alt="Foto 5"></div>
+            <div class="swiper-slide"><img src="6.png" alt="Foto 6"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="photo-counter">0/6</div>
+    </div>
+
+    <!-- Tarjeta final -->
+    <div class="card" id="finalCard">
+        <h2>Sé que no es mucho pero espero te haya gustado</h2>
+        <p>¡Gracias por ser parte de mi vida! 💝</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script src="scrip.js">
+        
+    </script>
+</body>
+</html>
